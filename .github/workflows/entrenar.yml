@@ -75,5 +75,5 @@ jobs:
           git config user.email "entrenador@users.noreply.github.com"
           git add campeones.json estrategias historial-nube.log
           git commit -m "tanda de entrenamiento: $(tail -1 historial-nube.log)" || echo "sin cambios"
-          git pull --rebase -X ours origin main || true
-          for i in 1 2 3; do git push && break; sleep 5; git pull --rebase -X ours origin main; done
+          git pull --rebase -X theirs origin main || true
+          for i in 1 2 3; do git push && break; sleep 5; git pull --rebase -X theirs origin main; done
