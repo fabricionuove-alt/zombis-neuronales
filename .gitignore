@@ -1,0 +1,12 @@
+antes/
+resultados/
+node_modules/
+*.out
+*.log
+!historial-nube.log
+visor.html
+archivo-desde-cero.json
+evolucion*.log
+tutor/usados/
+tutor/inyectar/
+prueba.mjs

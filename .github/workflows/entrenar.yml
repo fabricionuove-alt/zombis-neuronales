@@ -1,0 +1,64 @@
+# ENTRENAR EN LA NUBE (GitHub Actions, gratis en repos publicos: 20 maquinas de 4 nucleos a la vez).
+# Cada "isla" corre el torneo de estrategias MINUTOS minutos con barrios propios; despues "juntar" prueba a todos los
+# campeones en los mismos 144 barrios, guarda al mejor en campeones.json y lo sube al repo para la tanda siguiente.
+name: entrenar
+on:
+  workflow_dispatch:
+    inputs:
+      minutos: {description: 'minutos de cada isla (maximo ~50)', default: '40'}
+      islas:   {description: 'cantidad de islas (maximo 20)', default: '20'}
+  # schedule:            # (descomentar para que corra solo, por ejemplo cada 6 horas)
+  #   - cron: '0 */6 * * *'
+permissions:
+  contents: write
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+    outputs:
+      lista: ${{ steps.l.outputs.lista }}
+    steps:
+      - id: l
+        run: echo "lista=$(seq 1 ${{ github.event.inputs.islas || 20 }} | jq -cs .)" >> "$GITHUB_OUTPUT"
+  isla:
+    needs: preparar
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        isla: ${{ fromJson(needs.preparar.outputs.lista) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: torneo
+        env:
+          ISLA: ${{ matrix.isla }}
+          MINUTOS: ${{ github.event.inputs.minutos || 40 }}
+          NIVEL: mezcla
+        run: node torneo.mjs 999 6000
+      - uses: actions/upload-artifact@v4
+        with:
+          name: isla-${{ matrix.isla }}
+          path: |
+            campeones.json
+            estrategias/
+            torneo.log
+  juntar:
+    needs: isla
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/download-artifact@v4
+        with: {path: resultados}
+      - run: node juntar.mjs resultados
+      - name: subir el mejor
+        run: |
+          git config user.name "entrenador"
+          git config user.email "entrenador@users.noreply.github.com"
+          git add campeones.json estrategias historial-nube.log
+          git commit -m "tanda de entrenamiento: $(tail -1 historial-nube.log)" || echo "sin cambios"
+          git push
