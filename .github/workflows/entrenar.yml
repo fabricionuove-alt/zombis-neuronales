@@ -5,7 +5,7 @@ name: entrenar
 on:
   workflow_dispatch:
     inputs:
-      minutos: {description: 'minutos de cada isla (maximo ~50)', default: '40'}
+      minutos: {description: 'minutos de cada isla (maximo ~50)', default: '15'}
       islas:   {description: 'cantidad de islas (maximo 20)', default: '20'}
   # schedule:            # (descomentar para que corra solo, por ejemplo cada 6 horas)
   #   - cron: '0 */6 * * *'
@@ -34,7 +34,7 @@ jobs:
       - name: torneo
         env:
           ISLA: ${{ matrix.isla }}
-          MINUTOS: ${{ github.event.inputs.minutos || 40 }}
+          MINUTOS: ${{ github.event.inputs.minutos || 15 }}
           NIVEL: mezcla
         run: node torneo.mjs 999 6000
       - uses: actions/upload-artifact@v4
