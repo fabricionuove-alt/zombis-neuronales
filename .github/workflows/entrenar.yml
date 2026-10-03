@@ -7,10 +7,15 @@ on:
     inputs:
       minutos: {description: 'minutos de cada isla (maximo ~50)', default: '15'}
       islas:   {description: 'cantidad de islas (maximo 20)', default: '20'}
+  push:                  # (subir correr.txt arranca una tanda: "minutos=120" en la primera linea)
+    paths: ['correr.txt']
   # schedule:            # (descomentar para que corra solo, por ejemplo cada 6 horas)
   #   - cron: '0 */6 * * *'
 permissions:
   contents: write
+concurrency:
+  group: entrenar
+  cancel-in-progress: false
 jobs:
   preparar:
     runs-on: ubuntu-latest
@@ -22,7 +27,7 @@ jobs:
   isla:
     needs: preparar
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix:
@@ -34,9 +39,12 @@ jobs:
       - name: torneo
         env:
           ISLA: ${{ matrix.isla }}
-          MINUTOS: ${{ github.event.inputs.minutos || 15 }}
           NIVEL: mezcla
-        run: node torneo.mjs 999 6000
+        run: |
+          M="${{ github.event.inputs.minutos }}"
+          if [ -z "$M" ] && [ -f correr.txt ]; then M=$(grep -oE 'minutos=[0-9]+' correr.txt | head -1 | cut -d= -f2); fi
+          export MINUTOS="${M:-15}"; echo "isla $ISLA: $MINUTOS minutos"
+          node torneo.mjs 9999 6000
       - uses: actions/upload-artifact@v4
         with:
           name: isla-${{ matrix.isla }}

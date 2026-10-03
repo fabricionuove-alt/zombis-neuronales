@@ -1,0 +1,2 @@
+minutos=120
+# subir este archivo arranca una tanda de entrenamiento en GitHub Actions (islas de N minutos, maximo ~330)
