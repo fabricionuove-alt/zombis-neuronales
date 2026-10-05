@@ -1,0 +1,2 @@
+minutos=30
+# subir este archivo arranca una tanda del desierto en GitHub Actions (N minutos de reloj; ademas corre solo cada 6 horas)

@@ -1,0 +1,55 @@
+# EL DESIERTO VIVO, ENTRENANDO SOLO (el ecosistema de caminante-g1: matas, cerdos, coyotes, Steves y arañas, cada uno con
+# su red). Corre cada 6 horas (y al subir desierto/correr.txt), MINUTOS minutos, siguiendo desde donde quedo. El mundo queda
+# en la rama "mundo" (un solo commit que se pisa: no engorda el repo), y el visor lo lee de ahi:
+#   https://raw.githubusercontent.com/fabricionuove-alt/zombis-neuronales/mundo/mundo.json
+name: desierto
+on:
+  workflow_dispatch:
+    inputs:
+      minutos: {description: 'minutos de reloj (maximo ~300)', default: '30'}
+  push:
+    paths: ['desierto/correr.txt']
+  schedule:
+    - cron: '17 */6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: desierto
+  cancel-in-progress: false
+jobs:
+  vivir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: traer el mundo de la tanda anterior
+        run: |
+          if git fetch --depth 1 origin mundo 2>/dev/null; then
+            for f in mundo.json historia.csv; do git show FETCH_HEAD:$f > desierto/$f 2>/dev/null || rm -f desierto/$f; done
+          fi
+          ls -la desierto
+      - name: vivir
+        env:
+          L: '1200'
+        run: |
+          M="${{ github.event.inputs.minutos }}"
+          if [ -z "$M" ]; then M=$(grep -oE 'minutos=[0-9]+' desierto/correr.txt | head -1 | cut -d= -f2); fi
+          export MINUTOS="${M:-30}"
+          node desierto/nube.mjs | tee tanda.txt
+      - name: resumen en la pagina de la corrida
+        run: |
+          echo '### El desierto' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat tanda.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+      - name: guardar el mundo (rama mundo, un solo commit)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir salida && cp desierto/mundo.json desierto/estado.json desierto/historia.csv salida/
+          cd salida && git init -q -b mundo
+          git config user.name "desierto" && git config user.email "desierto@users.noreply.github.com"
+          git add . && git commit -qm "el desierto: $(tail -1 ../tanda.txt)"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" mundo
