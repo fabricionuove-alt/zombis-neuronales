@@ -1,3 +1,1 @@
-minutos=30
-# subir este archivo arranca una tanda del desierto en GitHub Actions (N minutos de reloj; ademas corre solo cada 6 horas)
-# 08-10: el simulador ya no vive aca: se baja del sitio del juego en cada tanda
+Mon Oct  5 04:14:52     2026
