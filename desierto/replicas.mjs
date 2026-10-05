@@ -13,7 +13,7 @@ import fs from 'fs'; import path from 'path'; import {fileURLToPath} from 'url';
 import * as m from './sim/mundoVivo.js';
 const aqui = path.dirname(fileURLToPath(import.meta.url)), en = f => path.join(aqui, f);
 const X = JSON.parse(fs.readFileSync(en('experimento.json'), 'utf8')), HORAS = X.horas || 4, N = X.replicas || 10, CADA = 900, TOPE = (X.topeMinutos || 300) * 60000;
-const semillaRed = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, semillas = {cerdo: semillaRed, coyote: semillaRed}, d = (m.L / 1800) ** 2;
+const semillaRed = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, coyoteF = en('sim/coyote-semilla.json'), coyoteRed = fs.existsSync(coyoteF) && fs.statSync(coyoteF).size > 100 ? JSON.parse(fs.readFileSync(coyoteF, 'utf8')).pesos : semillaRed, semillas = {cerdo: semillaRed, coyote: coyoteRed}, d = (m.L / 1800) ** 2;
 const dir = en('experimento'); fs.mkdirSync(dir, {recursive: true});
 const series = ['receta,replica,semilla,minuto,especie,n,biomasa'], reps = ['receta,replica,semilla,especie,minutoDeExtincion,nMedio,nFinal'];
 const media = l => l.reduce((a, b) => a + b, 0) / (l.length || 1), desvio = l => { if (l.length < 2) return 0; const u = media(l); return Math.sqrt(l.reduce((a, b) => a + (b - u) ** 2, 0) / (l.length - 1)); };

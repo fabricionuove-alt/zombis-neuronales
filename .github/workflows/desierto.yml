@@ -29,6 +29,7 @@ jobs:
           mkdir -p desierto/sim
           for f in mundoVivo.js floraViva.js red2.js; do curl -fsSL "https://caminante-g1.vercel.app/sim/$f" -o "desierto/sim/$f"; done
           curl -fsSL "https://caminante-g1.vercel.app/cresta-salvaje.json" -o desierto/sim/cresta-salvaje.json
+          curl -fsSL "https://caminante-g1.vercel.app/coyote-semilla.json" -o desierto/sim/coyote-semilla.json || rm -f desierto/sim/coyote-semilla.json
           ls -la desierto/sim
       - name: traer el mundo de la tanda anterior
         run: |

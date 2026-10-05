@@ -8,7 +8,7 @@ import fs from 'fs'; import path from 'path'; import {fileURLToPath} from 'url';
 // antes de correr. Asi el juego, el visor y esto corren siempre el mismo archivo.
 import * as m from './sim/mundoVivo.js';
 const aqui = path.dirname(fileURLToPath(import.meta.url)), en = f => path.join(aqui, f), e = process.env, MINUTOS = +(e.MINUTOS || 30);
-const semilla = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, semillas = {cerdo: semilla, coyote: semilla};
+const semilla = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, coyoteF = en('sim/coyote-semilla.json'), coyote = fs.existsSync(coyoteF) && fs.statSync(coyoteF).size > 100 ? JSON.parse(fs.readFileSync(coyoteF, 'utf8')).pesos : semilla, semillas = {cerdo: semilla, coyote};   // (el coyote, con su red de cazador si ya esta entrenada)
 const receta = fs.existsSync(en('receta.json')) ? JSON.parse(fs.readFileSync(en('receta.json'), 'utf8')) : null;
 let M = null, desde = 'cero';
 if (fs.existsSync(en('mundo.json'))) { try { const f = JSON.parse(fs.readFileSync(en('mundo.json'), 'utf8')); if (f.L === m.L && f.matas) { M = m.desdeFoto(f, {semillas, receta}); desde = `la hora ${(M.t / 3600).toFixed(1)}`; } } catch (err) { console.log('el mundo guardado no sirve, arranco de cero:', err.message); } }
