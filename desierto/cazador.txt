@@ -1,0 +1,3 @@
+especie=coyote
+generaciones=120
+Mon Oct  5 19:59:10     2026

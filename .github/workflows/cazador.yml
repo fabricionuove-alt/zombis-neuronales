@@ -1,0 +1,62 @@
+# LA SEMILLA DEL CAZADOR: entrena la red con la que arrancan los coyotes (y despues las arañas) del desierto vivo, sobre el mismo
+# simulador del juego. Se lanza al subir desierto/cazador.txt (o a mano). Sigue desde donde quedo. El avance queda en la rama
+# "cazador" y se actualiza cada 10 minutos mientras corre:
+#   https://raw.githubusercontent.com/fabricionuove-alt/zombis-neuronales/cazador/avance.txt   (una linea por generacion)
+#   https://raw.githubusercontent.com/fabricionuove-alt/zombis-neuronales/cazador/coyote-semilla.json
+name: cazador
+on:
+  workflow_dispatch:
+  push:
+    paths: ['desierto/cazador.txt']
+permissions:
+  contents: write
+concurrency:
+  group: cazador
+  cancel-in-progress: true
+jobs:
+  entrenar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: armar el simulador (el mismo archivo que usan el juego y el visor)
+        run: |
+          mkdir -p cg/src cg/public cg/tools/vivo salida
+          for f in mundoVivo.js floraViva.js red2.js; do curl -fsSL "https://caminante-g1.vercel.app/sim/$f" -o "cg/src/$f"; done
+          curl -fsSL "https://caminante-g1.vercel.app/cresta-salvaje.json" -o cg/public/cresta-salvaje.json
+          cp desierto/entrenar-cazador.mjs cg/tools/vivo/
+          echo '{"type":"module"}' > cg/package.json
+          ESP=$(grep -oE 'especie=[a-z]+' desierto/cazador.txt | head -1 | cut -d= -f2); echo "ESP=${ESP:-coyote}" >> "$GITHUB_ENV"
+          G=$(grep -oE 'generaciones=[0-9]+' desierto/cazador.txt | head -1 | cut -d= -f2); echo "GENS=${G:-120}" >> "$GITHUB_ENV"
+      - name: traer lo entrenado hasta ahora
+        run: |
+          if git fetch --depth 1 origin cazador 2>/dev/null; then
+            for f in coyote-semilla.json arana-semilla.json avance.txt; do git show FETCH_HEAD:$f > salida/$f 2>/dev/null || rm -f salida/$f; done
+            [ -f "salida/${ESP}-semilla.json" ] && cp "salida/${ESP}-semilla.json" cg/public/ || true
+          fi
+          ls -la salida cg/public
+      - name: entrenar (y subir el avance cada 10 minutos)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          L: '600'
+        run: |
+          subir() {
+            cp cg/public/*-semilla.json salida/ 2>/dev/null || true; cp tanda.txt "salida/tanda-${ESP}.txt"; grep '^gen ' tanda.txt | sed "s/^/${ESP} /" > nuevas.txt; cat salida/avance-previo.txt nuevas.txt > salida/avance.txt 2>/dev/null || cp nuevas.txt salida/avance.txt
+            rm -rf sube && mkdir sube && cp salida/*.json salida/avance.txt salida/tanda-*.txt sube/ 2>/dev/null; cd sube && git init -q -b cazador && git config user.name "desierto" && git config user.email "desierto@users.noreply.github.com" && git add . && git commit -qm "el cazador: $(tail -1 ../tanda.txt | cut -c1-80)" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" cazador; cd ..
+          }
+          [ -f salida/avance.txt ] && cp salida/avance.txt salida/avance-previo.txt || : > salida/avance-previo.txt
+          : > tanda.txt
+          (cd cg && node tools/vivo/entrenar-cazador.mjs "$GENS" 4 "$ESP" > ../tanda.txt 2>&1) &
+          PID=$!
+          while kill -0 $PID 2>/dev/null; do for i in $(seq 60); do kill -0 $PID 2>/dev/null || break; sleep 10; done; subir || true; done
+          wait $PID || true
+          subir
+          cat tanda.txt
+      - name: resumen en la pagina de la corrida
+        run: |
+          echo '### El cazador' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat tanda.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
