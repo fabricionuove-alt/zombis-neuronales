@@ -24,6 +24,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
+      - name: bajar el simulador (el mismo archivo que usan el juego y el visor)
+        run: |
+          mkdir -p desierto/sim
+          for f in mundoVivo.js floraViva.js red2.js; do curl -fsSL "https://caminante-g1.vercel.app/sim/$f" -o "desierto/sim/$f"; done
+          curl -fsSL "https://caminante-g1.vercel.app/cresta-salvaje.json" -o desierto/sim/cresta-salvaje.json
+          ls -la desierto/sim
       - name: traer el mundo de la tanda anterior
         run: |
           if git fetch --depth 1 origin mundo 2>/dev/null; then

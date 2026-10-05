@@ -4,9 +4,11 @@
 //   MINUTOS=30 L=1200 node desierto/nube.mjs
 // La receta del mundo online: desierto/receta.json (solo lo que cambia respecto de la base; ver recetaBase en mundoVivo.js).
 import fs from 'fs'; import path from 'path'; import {fileURLToPath} from 'url';
-import * as m from './mundoVivo.js';
+// EL SIMULADOR NO ESTA EN ESTE REPO: la tarea lo baja del sitio del juego (https://caminante-g1.vercel.app/sim/) a desierto/sim/
+// antes de correr. Asi el juego, el visor y esto corren siempre el mismo archivo.
+import * as m from './sim/mundoVivo.js';
 const aqui = path.dirname(fileURLToPath(import.meta.url)), en = f => path.join(aqui, f), e = process.env, MINUTOS = +(e.MINUTOS || 30);
-const semilla = JSON.parse(fs.readFileSync(en('cresta-salvaje.json'), 'utf8')).pesos, semillas = {cerdo: semilla, coyote: semilla};
+const semilla = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, semillas = {cerdo: semilla, coyote: semilla};
 const receta = fs.existsSync(en('receta.json')) ? JSON.parse(fs.readFileSync(en('receta.json'), 'utf8')) : null;
 let M = null, desde = 'cero';
 if (fs.existsSync(en('mundo.json'))) { try { const f = JSON.parse(fs.readFileSync(en('mundo.json'), 'utf8')); if (f.L === m.L && f.matas) { M = m.desdeFoto(f, {semillas, receta}); desde = `la hora ${(M.t / 3600).toFixed(1)}`; } } catch (err) { console.log('el mundo guardado no sirve, arranco de cero:', err.message); } }
