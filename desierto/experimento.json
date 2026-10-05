@@ -1,0 +1,12 @@
+{
+ "para": "que pasa con cada especie, medido con replicas. Cambiar este archivo y subirlo lanza el experimento",
+ "lado": 1200,
+ "horas": 4,
+ "replicas": 10,
+ "topeMinutos": 300,
+ "recetas": [
+  {"nombre": "base", "receta": {}},
+  {"nombre": "mas pasto (ritmo x2)", "receta": {"flora": {"ritmo": 2}}},
+  {"nombre": "el pasto llena poco al Steve (0.3)", "receta": {"come": {"steve": {"pasto": 0.3}}}}
+ ]
+}

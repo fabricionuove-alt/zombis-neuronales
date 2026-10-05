@@ -1,0 +1,45 @@
+# EL EXPERIMENTO DEL DESIERTO: cada receta de desierto/experimento.json, corrida REPLICAS veces con semillas distintas y sin que
+# llegue nadie de afuera. Se lanza al subir desierto/experimento.json (o a mano). El resultado queda en la rama "experimento":
+#   https://raw.githubusercontent.com/fabricionuove-alt/zombis-neuronales/experimento/resultado.json  (y series.csv, replicas.csv)
+name: experimento
+on:
+  workflow_dispatch:
+  push:
+    paths: ['desierto/experimento.json']
+permissions:
+  contents: write
+concurrency:
+  group: experimento
+  cancel-in-progress: true
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: bajar el simulador (el mismo archivo que usan el juego y el visor)
+        run: |
+          mkdir -p desierto/sim
+          for f in mundoVivo.js floraViva.js red2.js; do curl -fsSL "https://caminante-g1.vercel.app/sim/$f" -o "desierto/sim/$f"; done
+          curl -fsSL "https://caminante-g1.vercel.app/cresta-salvaje.json" -o desierto/sim/cresta-salvaje.json
+      - name: medir
+        run: |
+          export L=$(node -p "require('./desierto/experimento.json').lado || 1200")
+          node desierto/replicas.mjs | tee tanda.txt
+      - name: resumen en la pagina de la corrida
+        run: |
+          echo '### El experimento' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          sed -n '/^RESUMEN/,$p' tanda.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+      - name: guardar el resultado (rama experimento, un solo commit)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir salida && cp desierto/experimento/* desierto/experimento.json salida/ && cp desierto/sim/mundoVivo.js desierto/sim/floraViva.js desierto/sim/red2.js salida/
+          cd salida && git init -q -b experimento
+          git config user.name "desierto" && git config user.email "desierto@users.noreply.github.com"
+          git add . && git commit -qm "el experimento: $(date -u +%F)"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" experimento
