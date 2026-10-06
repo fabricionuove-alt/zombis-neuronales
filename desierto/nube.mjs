@@ -9,10 +9,14 @@ import fs from 'fs'; import path from 'path'; import {fileURLToPath} from 'url';
 import * as m from './sim/mundoVivo.js';
 const aqui = path.dirname(fileURLToPath(import.meta.url)), en = f => path.join(aqui, f), e = process.env, MINUTOS = +(e.MINUTOS || 30);
 const semilla = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, coyoteF = en('sim/coyote-semilla.json'), coyote = fs.existsSync(coyoteF) && fs.statSync(coyoteF).size > 100 ? JSON.parse(fs.readFileSync(coyoteF, 'utf8')).pesos : semilla, semillas = {cerdo: semilla, coyote};   // (el coyote, con su red de cazador si ya esta entrenada)
+// (12-10) el cerebro de arranque de cada especie (sim/semillas-vivo.json: redes que imitan al maestro); si no esta, lo de antes
+const svF = en('sim/semillas-vivo.json'), sv = fs.existsSync(svF) && fs.statSync(svF).size > 1000 ? JSON.parse(fs.readFileSync(svF, 'utf8')) : null;
+if (sv) { semillas.cerdo = sv.cerdo.pesos; semillas.coyote = sv.coyote.pesos; }
+const semillasG = sv ? {steve: sv.steve.pesos, arana: sv.arana.pesos} : null;
 const receta = fs.existsSync(en('receta.json')) ? JSON.parse(fs.readFileSync(en('receta.json'), 'utf8')) : null;
 let M = null, desde = 'cero';
-if (fs.existsSync(en('mundo.json'))) { try { const f = JSON.parse(fs.readFileSync(en('mundo.json'), 'utf8')); if (f.L === m.L && f.matas) { M = m.desdeFoto(f, {semillas, receta}); desde = `la hora ${(M.t / 3600).toFixed(1)}`; } } catch (err) { console.log('el mundo guardado no sirve, arranco de cero:', err.message); } }
-if (!M) { const d = (m.L / 1800) ** 2; M = m.crearMundo({receta, semillas, n: {cerdo: Math.round(90 * d), coyote: Math.round(15 * d)}, tribus: {steve: Math.round(18 * d), arana: Math.round(5 * d)}, nOasis: Math.round(12 * d)}); }
+if (fs.existsSync(en('mundo.json'))) { try { const f = JSON.parse(fs.readFileSync(en('mundo.json'), 'utf8')); if (f.L === m.L && f.matas && f.energiaTotal > 0) {   /* (los mundos de antes del circuito cerrado -sin energiaTotal- no se siguen: arranca uno nuevo) */ M = m.desdeFoto(f, {semillas, semillasG, receta}); desde = `la hora ${(M.t / 3600).toFixed(1)}`; } } catch (err) { console.log('el mundo guardado no sirve, arranco de cero:', err.message); } }
+if (!M) { const d = (m.L / 1800) ** 2; M = m.crearMundo({receta, semillas, semillasG, n: {cerdo: Math.round(90 * d), coyote: Math.round(15 * d)}, tribus: {steve: Math.round(18 * d), arana: Math.round(5 * d)}, nOasis: Math.round(12 * d)}); }
 console.log(`mundo de ${m.L} m, desde ${desde}, ${MINUTOS} minutos de reloj · receta ${JSON.stringify(m.diferencia(M.R))}`);
 const csv = en('historia.csv'), cols = ['hora', 'matas', ...m.ESPECIES.flatMap(k => [k, k + 'Gen', k + 'Llegadas'])];
 if (!fs.existsSync(csv)) fs.writeFileSync(csv, cols.join(',') + '\n');

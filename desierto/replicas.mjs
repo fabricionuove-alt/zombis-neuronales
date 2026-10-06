@@ -15,6 +15,10 @@ import {maestro} from './maestro.mjs';   // (el cerebro escrito a mano: con "mae
 const aqui = path.dirname(fileURLToPath(import.meta.url)), en = f => path.join(aqui, f);
 const X = JSON.parse(fs.readFileSync(en('experimento.json'), 'utf8')), HORAS = X.horas || 4, N = X.replicas || 10, CADA = 900, TOPE = (X.topeMinutos || 300) * 60000;
 const semillaRed = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, coyoteF = en('sim/coyote-semilla.json'), coyoteRed = fs.existsSync(coyoteF) && fs.statSync(coyoteF).size > 100 ? JSON.parse(fs.readFileSync(coyoteF, 'utf8')).pesos : semillaRed, semillas = {cerdo: semillaRed, coyote: coyoteRed}, d = (m.L / 1800) ** 2;
+// (12-10) el cerebro de arranque de cada especie (sim/semillas-vivo.json: redes que imitan al maestro); si no esta, lo de antes
+const svF = en('sim/semillas-vivo.json'), sv = fs.existsSync(svF) && fs.statSync(svF).size > 1000 ? JSON.parse(fs.readFileSync(svF, 'utf8')) : null;
+if (sv) { semillas.cerdo = sv.cerdo.pesos; semillas.coyote = sv.coyote.pesos; }
+const semillasG = sv ? {steve: sv.steve.pesos, arana: sv.arana.pesos} : null;
 const dir = en('experimento'); fs.mkdirSync(dir, {recursive: true});
 const series = ['receta,replica,semilla,minuto,especie,n,biomasa'], reps = ['receta,replica,semilla,especie,minutoDeExtincion,nMedio,nFinal'];
 const media = l => l.reduce((a, b) => a + b, 0) / (l.length || 1), desvio = l => { if (l.length < 2) return 0; const u = media(l); return Math.sqrt(l.reduce((a, b) => a + (b - u) ** 2, 0) / (l.length - 1)); };
@@ -25,7 +29,7 @@ for (const rc of X.recetas) {
   const porEsp = {}; for (const k of m.ESPECIES) porEsp[k] = {ext: [], nMedio: [], nFinal: [], vivas: 0}; let hechas = 0;
   for (let rep = 1; rep <= N; rep++) { if (Date.now() - t0 > TOPE) { cortado = true; break; }
     m.sembrar(rep);
-    const M = m.crearMundo({receta: rc.receta, semillas, sinLlegadas: true, n: {cerdo: Math.round(90 * d), coyote: Math.round(15 * d)}, tribus: {steve: Math.round(18 * d), arana: Math.round(5 * d)}, nOasis: Math.round(12 * d)});
+    const M = m.crearMundo({receta: rc.receta, semillas, semillasG, sinLlegadas: true, n: {cerdo: Math.round(90 * d), coyote: Math.round(15 * d)}, tribus: {steve: Math.round(18 * d), arana: Math.round(5 * d)}, nOasis: Math.round(12 * d)});
     if (X.maestro) M.maestro = maestro;
     const ext = {}, suma = {}; let muestras = 0; for (const k of m.ESPECIES) suma[k] = 0;
     for (let t = 0; t < HORAS * 3600; t += CADA) { for (let k = 0; k < CADA * 2; k++) m.paso(M, 0.5); const c = m.censo(M), min = Math.round(M.t / 60); muestras++;
