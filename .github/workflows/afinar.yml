@@ -1,0 +1,56 @@
+# AFINAR LA RED DE LA GENTE del desierto vivo (caminante-g1): entrenamiento con premio de bienestar solamente, para ver si emerge el
+# campamento (dormir bajo techo, levantar refugios). Se lanza al subir desierto/afinar.txt. NUNCA corre mas de 20 minutos.
+# Trae su propio simulador (desierto/afinar-sim: lo que todavia no esta publicado en el juego). El resultado queda en la rama "afinar":
+#   https://raw.githubusercontent.com/fabricionuove-alt/zombis-neuronales/afinar/afinar-avance.txt   (una linea por generacion)
+#   https://raw.githubusercontent.com/fabricionuove-alt/zombis-neuronales/afinar/semillas-afinadas.json
+name: afinar
+on:
+  workflow_dispatch:
+  push:
+    paths: ['desierto/afinar.txt']
+permissions:
+  contents: write
+concurrency:
+  group: afinar
+  cancel-in-progress: true
+jobs:
+  afinar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: armar
+        run: |
+          mkdir -p cg/src cg/public cg/tools/vivo salida
+          cp desierto/afinar-sim/mundoVivo.js desierto/afinar-sim/floraViva.js desierto/afinar-sim/red2.js cg/src/
+          cp desierto/afinar-sim/afinar.mjs cg/tools/vivo/
+          cp desierto/afinar-sim/semillas-vivo.json cg/public/
+          echo '{"type":"module"}' > cg/package.json
+          # (si ya hay una tanda anterior, se sigue desde ahi)
+          if grep -q 'seguir=si' desierto/afinar.txt && git fetch --depth 1 origin afinar 2>/dev/null; then git show FETCH_HEAD:semillas-afinadas.json > cg/public/semillas-anteriores.json 2>/dev/null && echo "DESDE=semillas-anteriores.json" >> "$GITHUB_ENV" || true; git show FETCH_HEAD:afinar-avance.txt > salida/avance-previo.txt 2>/dev/null || true; fi
+          ESP=$(grep -oE 'especie=[a-z]+' desierto/afinar.txt | head -1 | cut -d= -f2); echo "ESP=${ESP:-steve}" >> "$GITHUB_ENV"
+      - name: afinar (14 minutos)
+        env:
+          L: '300'
+          MINUTOS: '14'
+        run: |
+          cd cg && node tools/vivo/afinar.mjs "$ESP" 4 | tee ../tanda.txt
+      - name: guardar (rama afinar, un solo commit)
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp cg/public/semillas-afinadas.json salida/ 2>/dev/null || true
+          cat salida/avance-previo.txt cg/tools/vivo/afinar-avance.txt > salida/afinar-avance.txt 2>/dev/null || cp cg/tools/vivo/afinar-avance.txt salida/afinar-avance.txt
+          rm -f salida/avance-previo.txt
+          cd salida && git init -q -b afinar && git config user.name "desierto" && git config user.email "desierto@users.noreply.github.com"
+          git add . && git commit -qm "afinar: $(tail -1 afinar-avance.txt | cut -c1-70)" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" afinar
+      - name: resumen en la pagina de la corrida
+        if: always()
+        run: |
+          echo '### Afinar' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat tanda.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
