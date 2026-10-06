@@ -1,0 +1,15 @@
+steve: 2894 pesos, desde la red que imita al maestro · 8 pares x 2 mundos de 2 dias (lado 300 m), 4 hilos, hasta 14 minutos
+gen 1 · bienestar: la red 0.741, la poblacion 0.681, la mejor 0.829 · de noche bajo techo: la red 15 %, la poblacion 21 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 63 s
+gen 2 · bienestar: la red 0.863, la poblacion 0.749, la mejor 0.958 · de noche bajo techo: la red 12 %, la poblacion 15 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 115 s
+gen 3 · bienestar: la red 0.770, la poblacion 0.786, la mejor 0.918 · de noche bajo techo: la red 11 %, la poblacion 11 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 174 s
+gen 4 · bienestar: la red 0.855, la poblacion 0.733, la mejor 0.846 · de noche bajo techo: la red 8 %, la poblacion 23 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 238 s
+gen 5 · bienestar: la red 0.826, la poblacion 0.784, la mejor 0.879 · de noche bajo techo: la red 8 %, la poblacion 12 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 290 s
+gen 6 · bienestar: la red 0.588, la poblacion 0.588, la mejor 0.830 · de noche bajo techo: la red 11 %, la poblacion 23 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 338 s
+gen 7 · bienestar: la red 0.921, la poblacion 0.858, la mejor 0.963 · de noche bajo techo: la red 12 %, la poblacion 18 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 408 s
+gen 8 · bienestar: la red 0.860, la poblacion 0.850, la mejor 0.977 · de noche bajo techo: la red 7 %, la poblacion 14 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 468 s
+gen 9 · bienestar: la red 0.772, la poblacion 0.745, la mejor 0.903 · de noche bajo techo: la red 18 %, la poblacion 21 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 531 s
+gen 10 · bienestar: la red 0.829, la poblacion 0.787, la mejor 0.905 · de noche bajo techo: la red 16 %, la poblacion 18 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 589 s
+gen 11 · bienestar: la red 0.904, la poblacion 0.846, la mejor 0.941 · de noche bajo techo: la red 11 %, la poblacion 19 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 648 s
+gen 12 · bienestar: la red 0.855, la poblacion 0.788, la mejor 0.896 · de noche bajo techo: la red 16 %, la poblacion 23 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 705 s
+gen 13 · bienestar: la red 0.553, la poblacion 0.587, la mejor 0.729 · de noche bajo techo: la red 15 %, la poblacion 25 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 764 s
+gen 14 · bienestar: la red 0.573, la poblacion 0.707, la mejor 0.855 · de noche bajo techo: la red 21 %, la poblacion 21 % · refugios por mundo: la red 0.0, la poblacion 0.0 (junto a otro 0 %) · 821 s
