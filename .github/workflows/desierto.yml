@@ -39,7 +39,7 @@ jobs:
           ls -la desierto
       - name: vivir
         env:
-          L: '1800'
+          L: '2400'
         run: |
           M="${{ github.event.inputs.minutos }}"
           if [ -z "$M" ]; then M=$(grep -oE 'minutos=[0-9]+' desierto/correr.txt | head -1 | cut -d= -f2); fi
