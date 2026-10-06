@@ -6,9 +6,9 @@
  "maestro": true,
  "topeMinutos": 300,
  "recetas": [
-  {"nombre": "cazadores de ayuno corto (coyote 900 s, araña 1200 s)", "receta": {}},
-  {"nombre": "ayuno medio (1800, 2400)", "receta": {"esp": {"coyote": {"tHambre": 1800}, "arana": {"tHambre": 2400}}}},
-  {"nombre": "ayuno largo (2700, 3600)", "receta": {"esp": {"coyote": {"tHambre": 2700}, "arana": {"tHambre": 3600}}}},
+  {"nombre": "cazadores de ayuno corto (coyote 900 s y araña 1200 s)", "receta": {}},
+  {"nombre": "ayuno medio (1800 y 2400)", "receta": {"esp": {"coyote": {"tHambre": 1800}, "arana": {"tHambre": 2400}}}},
+  {"nombre": "ayuno largo (2700 y 3600)", "receta": {"esp": {"coyote": {"tHambre": 2700}, "arana": {"tHambre": 3600}}}},
   {"nombre": "ayuno medio y araña que cria lento (gesta 1500)", "receta": {"esp": {"coyote": {"tHambre": 1800}, "arana": {"tHambre": 2400, "gesta": 1500}}}}
  ]
 }
