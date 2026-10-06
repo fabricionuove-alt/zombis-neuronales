@@ -1,0 +1,33 @@
+receta,replica,semilla,especie,minutoDeExtincion,nMedio,nFinal
+base,1,1,cerdo,,69.33,134
+base,1,1,coyote,,7.67,9
+base,1,1,steve,,71.67,103
+base,1,1,arana,,3.67,2
+base,2,2,cerdo,,73.83,99
+base,2,2,coyote,,5.5,7
+base,2,2,steve,,48,51
+base,2,2,arana,60,6.17,0
+base,3,3,cerdo,,50.83,30
+base,3,3,coyote,,10.5,15
+base,3,3,steve,,65.67,90
+base,3,3,arana,,4.33,2
+base,4,4,cerdo,,22.83,9
+base,4,4,coyote,,7.67,11
+base,4,4,steve,,65.67,86
+base,4,4,arana,,10.5,12
+suelo pobre (el de antes: agua 30 y energia 40),1,1,cerdo,,26,4
+suelo pobre (el de antes: agua 30 y energia 40),1,1,coyote,,4.67,3
+suelo pobre (el de antes: agua 30 y energia 40),1,1,steve,,28.5,14
+suelo pobre (el de antes: agua 30 y energia 40),1,1,arana,60,2.67,0
+suelo pobre (el de antes: agua 30 y energia 40),2,2,cerdo,,28.5,2
+suelo pobre (el de antes: agua 30 y energia 40),2,2,coyote,,2.33,1
+suelo pobre (el de antes: agua 30 y energia 40),2,2,steve,,32.33,17
+suelo pobre (el de antes: agua 30 y energia 40),2,2,arana,45,2,0
+suelo pobre (el de antes: agua 30 y energia 40),3,3,cerdo,,54.17,42
+suelo pobre (el de antes: agua 30 y energia 40),3,3,coyote,90,2.33,0
+suelo pobre (el de antes: agua 30 y energia 40),3,3,steve,,28.83,15
+suelo pobre (el de antes: agua 30 y energia 40),3,3,arana,90,2.83,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,cerdo,75,12.17,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,coyote,,6.33,6
+suelo pobre (el de antes: agua 30 y energia 40),4,4,steve,,28.83,25
+suelo pobre (el de antes: agua 30 y energia 40),4,4,arana,60,5.83,0

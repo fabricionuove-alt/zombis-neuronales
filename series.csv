@@ -1,0 +1,241 @@
+receta,replica,semilla,minuto,especie,n,biomasa
+base,1,1,15,cerdo,31,6.2
+base,1,1,15,coyote,6,0.66
+base,1,1,15,steve,48,9.6
+base,1,1,15,arana,7,1.4
+base,1,1,15,mata,1027,
+base,1,1,30,cerdo,44,7.65
+base,1,1,30,coyote,6,0.66
+base,1,1,30,steve,58,10.49
+base,1,1,30,arana,5,1
+base,1,1,30,mata,1099,
+base,1,1,45,cerdo,59,10.34
+base,1,1,45,coyote,7,0.7
+base,1,1,45,steve,62,11.04
+base,1,1,45,arana,4,0.8
+base,1,1,45,mata,1120,
+base,1,1,60,cerdo,60,10.46
+base,1,1,60,coyote,9,0.84
+base,1,1,60,steve,72,12.44
+base,1,1,60,arana,2,0.4
+base,1,1,60,mata,1145,
+base,1,1,75,cerdo,88,14.69
+base,1,1,75,coyote,9,0.83
+base,1,1,75,steve,87,14.77
+base,1,1,75,arana,2,0.4
+base,1,1,75,mata,1346,
+base,1,1,90,cerdo,134,22.78
+base,1,1,90,coyote,9,0.87
+base,1,1,90,steve,103,17.2
+base,1,1,90,arana,2,0.4
+base,1,1,90,mata,1390,
+base,2,2,15,cerdo,39,7.8
+base,2,2,15,coyote,6,0.66
+base,2,2,15,steve,46,9.2
+base,2,2,15,arana,15,2.89
+base,2,2,15,mata,996,
+base,2,2,30,cerdo,73,11.78
+base,2,2,30,coyote,3,0.33
+base,2,2,30,steve,50,9.53
+base,2,2,30,arana,12,1.89
+base,2,2,30,mata,1073,
+base,2,2,45,cerdo,78,12.76
+base,2,2,45,coyote,5,0.41
+base,2,2,45,steve,48,9.14
+base,2,2,45,arana,10,1.79
+base,2,2,45,mata,1159,
+base,2,2,60,cerdo,83,14.08
+base,2,2,60,coyote,6,0.51
+base,2,2,60,steve,48,8.91
+base,2,2,60,arana,0,0
+base,2,2,60,mata,1247,
+base,2,2,75,cerdo,71,11.76
+base,2,2,75,coyote,6,0.56
+base,2,2,75,steve,45,8.43
+base,2,2,75,arana,0,0
+base,2,2,75,mata,1499,
+base,2,2,90,cerdo,99,16.82
+base,2,2,90,coyote,7,0.62
+base,2,2,90,steve,51,9.18
+base,2,2,90,arana,0,0
+base,2,2,90,mata,1552,
+base,3,3,15,cerdo,38,7.6
+base,3,3,15,coyote,7,0.77
+base,3,3,15,steve,47,9.4
+base,3,3,15,arana,8,1.6
+base,3,3,15,mata,1052,
+base,3,3,30,cerdo,60,10.48
+base,3,3,30,coyote,7,0.77
+base,3,3,30,steve,55,10.07
+base,3,3,30,arana,5,1
+base,3,3,30,mata,1137,
+base,3,3,45,cerdo,59,10.46
+base,3,3,45,coyote,10,0.91
+base,3,3,45,steve,61,10.77
+base,3,3,45,arana,5,1
+base,3,3,45,mata,1212,
+base,3,3,60,cerdo,56,9.89
+base,3,3,60,coyote,12,1.08
+base,3,3,60,steve,66,11.52
+base,3,3,60,arana,4,0.8
+base,3,3,60,mata,1233,
+base,3,3,75,cerdo,62,11.22
+base,3,3,75,coyote,12,1.16
+base,3,3,75,steve,75,13.1
+base,3,3,75,arana,2,0.4
+base,3,3,75,mata,1454,
+base,3,3,90,cerdo,30,5.25
+base,3,3,90,coyote,15,1.39
+base,3,3,90,steve,90,14.9
+base,3,3,90,arana,2,0.4
+base,3,3,90,mata,1465,
+base,4,4,15,cerdo,37,7.4
+base,4,4,15,coyote,5,0.55
+base,4,4,15,steve,48,9.6
+base,4,4,15,arana,13,2.48
+base,4,4,15,mata,978,
+base,4,4,30,cerdo,35,5.93
+base,4,4,30,coyote,5,0.55
+base,4,4,30,steve,55,10.22
+base,4,4,30,arana,11,2.01
+base,4,4,30,mata,1078,
+base,4,4,45,cerdo,25,4.16
+base,4,4,45,coyote,7,0.64
+base,4,4,45,steve,64,11.18
+base,4,4,45,arana,10,1.88
+base,4,4,45,mata,1183,
+base,4,4,60,cerdo,21,3.68
+base,4,4,60,coyote,9,0.77
+base,4,4,60,steve,67,11.86
+base,4,4,60,arana,8,1.55
+base,4,4,60,mata,1318,
+base,4,4,75,cerdo,10,1.85
+base,4,4,75,coyote,9,0.85
+base,4,4,75,steve,74,13.35
+base,4,4,75,arana,9,1.69
+base,4,4,75,mata,1599,
+base,4,4,90,cerdo,9,1.64
+base,4,4,90,coyote,11,1.01
+base,4,4,90,steve,86,15.08
+base,4,4,90,arana,12,2.02
+base,4,4,90,mata,1488,
+suelo pobre (el de antes: agua 30 y energia 40),1,1,15,cerdo,37,7.4
+suelo pobre (el de antes: agua 30 y energia 40),1,1,15,coyote,4,0.44
+suelo pobre (el de antes: agua 30 y energia 40),1,1,15,steve,44,8.8
+suelo pobre (el de antes: agua 30 y energia 40),1,1,15,arana,11,2.2
+suelo pobre (el de antes: agua 30 y energia 40),1,1,15,mata,306,
+suelo pobre (el de antes: agua 30 y energia 40),1,1,30,cerdo,49,8.31
+suelo pobre (el de antes: agua 30 y energia 40),1,1,30,coyote,4,0.44
+suelo pobre (el de antes: agua 30 y energia 40),1,1,30,steve,42,8.17
+suelo pobre (el de antes: agua 30 y energia 40),1,1,30,arana,4,0.8
+suelo pobre (el de antes: agua 30 y energia 40),1,1,30,mata,306,
+suelo pobre (el de antes: agua 30 y energia 40),1,1,45,cerdo,26,4.29
+suelo pobre (el de antes: agua 30 y energia 40),1,1,45,coyote,6,0.53
+suelo pobre (el de antes: agua 30 y energia 40),1,1,45,steve,38,7.26
+suelo pobre (el de antes: agua 30 y energia 40),1,1,45,arana,1,0.2
+suelo pobre (el de antes: agua 30 y energia 40),1,1,45,mata,311,
+suelo pobre (el de antes: agua 30 y energia 40),1,1,60,cerdo,21,3.7
+suelo pobre (el de antes: agua 30 y energia 40),1,1,60,coyote,5,0.39
+suelo pobre (el de antes: agua 30 y energia 40),1,1,60,steve,19,3.62
+suelo pobre (el de antes: agua 30 y energia 40),1,1,60,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),1,1,60,mata,321,
+suelo pobre (el de antes: agua 30 y energia 40),1,1,75,cerdo,19,3.52
+suelo pobre (el de antes: agua 30 y energia 40),1,1,75,coyote,6,0.48
+suelo pobre (el de antes: agua 30 y energia 40),1,1,75,steve,14,2.73
+suelo pobre (el de antes: agua 30 y energia 40),1,1,75,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),1,1,75,mata,413,
+suelo pobre (el de antes: agua 30 y energia 40),1,1,90,cerdo,4,0.73
+suelo pobre (el de antes: agua 30 y energia 40),1,1,90,coyote,3,0.29
+suelo pobre (el de antes: agua 30 y energia 40),1,1,90,steve,14,2.78
+suelo pobre (el de antes: agua 30 y energia 40),1,1,90,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),1,1,90,mata,415,
+suelo pobre (el de antes: agua 30 y energia 40),2,2,15,cerdo,39,7.8
+suelo pobre (el de antes: agua 30 y energia 40),2,2,15,coyote,5,0.55
+suelo pobre (el de antes: agua 30 y energia 40),2,2,15,steve,48,9.6
+suelo pobre (el de antes: agua 30 y energia 40),2,2,15,arana,9,1.8
+suelo pobre (el de antes: agua 30 y energia 40),2,2,15,mata,306,
+suelo pobre (el de antes: agua 30 y energia 40),2,2,30,cerdo,49,8.45
+suelo pobre (el de antes: agua 30 y energia 40),2,2,30,coyote,3,0.33
+suelo pobre (el de antes: agua 30 y energia 40),2,2,30,steve,47,9.05
+suelo pobre (el de antes: agua 30 y energia 40),2,2,30,arana,3,0.6
+suelo pobre (el de antes: agua 30 y energia 40),2,2,30,mata,312,
+suelo pobre (el de antes: agua 30 y energia 40),2,2,45,cerdo,30,4.81
+suelo pobre (el de antes: agua 30 y energia 40),2,2,45,coyote,2,0.22
+suelo pobre (el de antes: agua 30 y energia 40),2,2,45,steve,40,7.66
+suelo pobre (el de antes: agua 30 y energia 40),2,2,45,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),2,2,45,mata,319,
+suelo pobre (el de antes: agua 30 y energia 40),2,2,60,cerdo,26,4.36
+suelo pobre (el de antes: agua 30 y energia 40),2,2,60,coyote,2,0.22
+suelo pobre (el de antes: agua 30 y energia 40),2,2,60,steve,23,4.3
+suelo pobre (el de antes: agua 30 y energia 40),2,2,60,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),2,2,60,mata,327,
+suelo pobre (el de antes: agua 30 y energia 40),2,2,75,cerdo,25,4.59
+suelo pobre (el de antes: agua 30 y energia 40),2,2,75,coyote,1,0.11
+suelo pobre (el de antes: agua 30 y energia 40),2,2,75,steve,19,3.74
+suelo pobre (el de antes: agua 30 y energia 40),2,2,75,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),2,2,75,mata,418,
+suelo pobre (el de antes: agua 30 y energia 40),2,2,90,cerdo,2,0.26
+suelo pobre (el de antes: agua 30 y energia 40),2,2,90,coyote,1,0.11
+suelo pobre (el de antes: agua 30 y energia 40),2,2,90,steve,17,3.37
+suelo pobre (el de antes: agua 30 y energia 40),2,2,90,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),2,2,90,mata,435,
+suelo pobre (el de antes: agua 30 y energia 40),3,3,15,cerdo,38,7.6
+suelo pobre (el de antes: agua 30 y energia 40),3,3,15,coyote,5,0.55
+suelo pobre (el de antes: agua 30 y energia 40),3,3,15,steve,48,9.6
+suelo pobre (el de antes: agua 30 y energia 40),3,3,15,arana,7,1.4
+suelo pobre (el de antes: agua 30 y energia 40),3,3,15,mata,335,
+suelo pobre (el de antes: agua 30 y energia 40),3,3,30,cerdo,65,10.9
+suelo pobre (el de antes: agua 30 y energia 40),3,3,30,coyote,3,0.33
+suelo pobre (el de antes: agua 30 y energia 40),3,3,30,steve,38,7.36
+suelo pobre (el de antes: agua 30 y energia 40),3,3,30,arana,5,1
+suelo pobre (el de antes: agua 30 y energia 40),3,3,30,mata,334,
+suelo pobre (el de antes: agua 30 y energia 40),3,3,45,cerdo,85,14.24
+suelo pobre (el de antes: agua 30 y energia 40),3,3,45,coyote,2,0.22
+suelo pobre (el de antes: agua 30 y energia 40),3,3,45,steve,31,5.89
+suelo pobre (el de antes: agua 30 y energia 40),3,3,45,arana,3,0.6
+suelo pobre (el de antes: agua 30 y energia 40),3,3,45,mata,350,
+suelo pobre (el de antes: agua 30 y energia 40),3,3,60,cerdo,46,7.66
+suelo pobre (el de antes: agua 30 y energia 40),3,3,60,coyote,2,0.22
+suelo pobre (el de antes: agua 30 y energia 40),3,3,60,steve,23,3.87
+suelo pobre (el de antes: agua 30 y energia 40),3,3,60,arana,1,0.2
+suelo pobre (el de antes: agua 30 y energia 40),3,3,60,mata,364,
+suelo pobre (el de antes: agua 30 y energia 40),3,3,75,cerdo,49,8.78
+suelo pobre (el de antes: agua 30 y energia 40),3,3,75,coyote,2,0.22
+suelo pobre (el de antes: agua 30 y energia 40),3,3,75,steve,18,2.89
+suelo pobre (el de antes: agua 30 y energia 40),3,3,75,arana,1,0.2
+suelo pobre (el de antes: agua 30 y energia 40),3,3,75,mata,455,
+suelo pobre (el de antes: agua 30 y energia 40),3,3,90,cerdo,42,7.24
+suelo pobre (el de antes: agua 30 y energia 40),3,3,90,coyote,0,0
+suelo pobre (el de antes: agua 30 y energia 40),3,3,90,steve,15,2.42
+suelo pobre (el de antes: agua 30 y energia 40),3,3,90,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),3,3,90,mata,435,
+suelo pobre (el de antes: agua 30 y energia 40),4,4,15,cerdo,33,6.6
+suelo pobre (el de antes: agua 30 y energia 40),4,4,15,coyote,7,0.77
+suelo pobre (el de antes: agua 30 y energia 40),4,4,15,steve,39,7.8
+suelo pobre (el de antes: agua 30 y energia 40),4,4,15,arana,19,3.48
+suelo pobre (el de antes: agua 30 y energia 40),4,4,15,mata,303,
+suelo pobre (el de antes: agua 30 y energia 40),4,4,30,cerdo,25,4.32
+suelo pobre (el de antes: agua 30 y energia 40),4,4,30,coyote,6,0.66
+suelo pobre (el de antes: agua 30 y energia 40),4,4,30,steve,39,7.45
+suelo pobre (el de antes: agua 30 y energia 40),4,4,30,arana,11,1.94
+suelo pobre (el de antes: agua 30 y energia 40),4,4,30,mata,313,
+suelo pobre (el de antes: agua 30 y energia 40),4,4,45,cerdo,13,2.1
+suelo pobre (el de antes: agua 30 y energia 40),4,4,45,coyote,7,0.7
+suelo pobre (el de antes: agua 30 y energia 40),4,4,45,steve,33,6.1
+suelo pobre (el de antes: agua 30 y energia 40),4,4,45,arana,5,0.96
+suelo pobre (el de antes: agua 30 y energia 40),4,4,45,mata,329,
+suelo pobre (el de antes: agua 30 y energia 40),4,4,60,cerdo,2,0.38
+suelo pobre (el de antes: agua 30 y energia 40),4,4,60,coyote,6,0.61
+suelo pobre (el de antes: agua 30 y energia 40),4,4,60,steve,18,3.19
+suelo pobre (el de antes: agua 30 y energia 40),4,4,60,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,60,mata,346,
+suelo pobre (el de antes: agua 30 y energia 40),4,4,75,cerdo,0,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,75,coyote,6,0.62
+suelo pobre (el de antes: agua 30 y energia 40),4,4,75,steve,19,3.39
+suelo pobre (el de antes: agua 30 y energia 40),4,4,75,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,75,mata,425,
+suelo pobre (el de antes: agua 30 y energia 40),4,4,90,cerdo,0,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,90,coyote,6,0.55
+suelo pobre (el de antes: agua 30 y energia 40),4,4,90,steve,25,4.08
+suelo pobre (el de antes: agua 30 y energia 40),4,4,90,arana,0,0
+suelo pobre (el de antes: agua 30 y energia 40),4,4,90,mata,413,

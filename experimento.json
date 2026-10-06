@@ -1,0 +1,24 @@
+{
+ "para": "el mundo completo como esta en el juego: redes de arranque que imitan al maestro, circuito cerrado de energia, suelo rico, costumbres y tecnicas. Cuanto aguanta cada especie y cuanta cultura acumulan",
+ "lado": 1200,
+ "horas": 1.5,
+ "replicas": 4,
+ "maestro": false,
+ "topeMinutos": 15,
+ "recetas": [
+  {
+   "nombre": "base",
+   "receta": {}
+  },
+  {
+   "nombre": "suelo pobre (el de antes: agua 30 y energia 40)",
+   "receta": {
+    "flora": {
+     "agua": 30,
+     "energia": 40,
+     "matas": 10
+    }
+   }
+  }
+ ]
+}

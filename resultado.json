@@ -1,0 +1,249 @@
+{
+ "hecho": "2026-10-06T02:19:43.907Z",
+ "lado": 1200,
+ "horas": 1.5,
+ "replicas": 4,
+ "sinLlegadas": true,
+ "maestro": false,
+ "recetas": [
+  {
+   "nombre": "base",
+   "receta": {},
+   "replicas": 4,
+   "especies": {
+    "cerdo": {
+     "sobrevive": 4,
+     "de": 4,
+     "medianaMinutoExtincion": null,
+     "nMedio": 54.21,
+     "desvio": 23.16,
+     "nFinalMedio": 68,
+     "nFinalDesvio": 58.43,
+     "asentamiento": [
+      69.33,
+      71.58,
+      64.67,
+      54.21
+     ]
+    },
+    "coyote": {
+     "sobrevive": 4,
+     "de": 4,
+     "medianaMinutoExtincion": null,
+     "nMedio": 7.83,
+     "desvio": 2.05,
+     "nFinalMedio": 10.5,
+     "nFinalDesvio": 3.42,
+     "asentamiento": [
+      7.67,
+      6.58,
+      7.89,
+      7.83
+     ]
+    },
+    "steve": {
+     "sobrevive": 4,
+     "de": 4,
+     "medianaMinutoExtincion": null,
+     "nMedio": 62.75,
+     "desvio": 10.23,
+     "nFinalMedio": 82.5,
+     "nFinalDesvio": 22.22,
+     "asentamiento": [
+      71.67,
+      59.83,
+      61.78,
+      62.75
+     ]
+    },
+    "arana": {
+     "sobrevive": 3,
+     "de": 4,
+     "medianaMinutoExtincion": 60,
+     "nMedio": 6.17,
+     "desvio": 3.08,
+     "nFinalMedio": 4,
+     "nFinalDesvio": 5.42,
+     "asentamiento": [
+      3.67,
+      4.92,
+      4.72,
+      6.17
+     ]
+    }
+   },
+   "cultura": {
+    "steve": {
+     "mundosConGente": 4,
+     "maneras": 21.75,
+     "tecnicas": {
+      "punta": {
+       "media": 0.18,
+       "desvio": 0.07,
+       "elQueMas": 0.54
+      },
+      "conserva": {
+       "media": 0.12,
+       "desvio": 0.04,
+       "elQueMas": 0.42
+      },
+      "agua": {
+       "media": 0.13,
+       "desvio": 0.08,
+       "elQueMas": 0.36
+      },
+      "trampa": {
+       "media": 0.06,
+       "desvio": 0.06,
+       "elQueMas": 0.24
+      },
+      "fuego": {
+       "media": 0,
+       "desvio": 0,
+       "elQueMas": 0
+      }
+     }
+    },
+    "arana": {
+     "mundosConGente": 3,
+     "maneras": 2.33,
+     "tecnicas": {
+      "punta": {
+       "media": 0.06,
+       "desvio": 0.11,
+       "elQueMas": 0.12
+      },
+      "conserva": {
+       "media": 0,
+       "desvio": 0,
+       "elQueMas": 0
+      },
+      "agua": {
+       "media": 0.01,
+       "desvio": 0.02,
+       "elQueMas": 0.07
+      },
+      "trampa": {
+       "media": 0.29,
+       "desvio": 0.01,
+       "elQueMas": 0.3
+      },
+      "fuego": {
+       "media": 0,
+       "desvio": 0,
+       "elQueMas": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "nombre": "suelo pobre (el de antes: agua 30 y energia 40)",
+   "receta": {
+    "flora": {
+     "agua": 30,
+     "energia": 40,
+     "matas": 10
+    }
+   },
+   "replicas": 4,
+   "especies": {
+    "cerdo": {
+     "sobrevive": 3,
+     "de": 4,
+     "medianaMinutoExtincion": 75,
+     "nMedio": 30.21,
+     "desvio": 17.51,
+     "nFinalMedio": 12,
+     "nFinalDesvio": 20.07,
+     "asentamiento": [
+      26,
+      27.25,
+      36.22,
+      30.21
+     ]
+    },
+    "coyote": {
+     "sobrevive": 3,
+     "de": 4,
+     "medianaMinutoExtincion": 90,
+     "nMedio": 3.92,
+     "desvio": 1.95,
+     "nFinalMedio": 2.5,
+     "nFinalDesvio": 2.65,
+     "asentamiento": [
+      4.67,
+      3.5,
+      3.11,
+      3.92
+     ]
+    },
+    "steve": {
+     "sobrevive": 4,
+     "de": 4,
+     "medianaMinutoExtincion": null,
+     "nMedio": 29.63,
+     "desvio": 1.81,
+     "nFinalMedio": 17.75,
+     "nFinalDesvio": 4.99,
+     "asentamiento": [
+      28.5,
+      30.42,
+      29.89,
+      29.63
+     ]
+    },
+    "arana": {
+     "sobrevive": 0,
+     "de": 4,
+     "medianaMinutoExtincion": 60,
+     "nMedio": 3.33,
+     "desvio": 1.71,
+     "nFinalMedio": 0,
+     "nFinalDesvio": 0,
+     "asentamiento": [
+      2.67,
+      2.33,
+      2.5,
+      3.33
+     ]
+    }
+   },
+   "cultura": {
+    "steve": {
+     "mundosConGente": 4,
+     "maneras": 5,
+     "tecnicas": {
+      "punta": {
+       "media": 0.09,
+       "desvio": 0.07,
+       "elQueMas": 0.27
+      },
+      "conserva": {
+       "media": 0.07,
+       "desvio": 0.06,
+       "elQueMas": 0.18
+      },
+      "agua": {
+       "media": 0.02,
+       "desvio": 0.02,
+       "elQueMas": 0.12
+      },
+      "trampa": {
+       "media": 0.04,
+       "desvio": 0.05,
+       "elQueMas": 0.13
+      },
+      "fuego": {
+       "media": 0,
+       "desvio": 0,
+       "elQueMas": 0
+      }
+     }
+    }
+   }
+  }
+ ],
+ "cortado": false,
+ "minutosDeReloj": 5
+}
