@@ -19,7 +19,7 @@ concurrency:
 jobs:
   vivir:
     runs-on: ubuntu-latest
-    timeout-minutes: 340
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -43,7 +43,7 @@ jobs:
         run: |
           M="${{ github.event.inputs.minutos }}"
           if [ -z "$M" ]; then M=$(grep -oE 'minutos=[0-9]+' desierto/correr.txt | head -1 | cut -d= -f2); fi
-          export MINUTOS="${M:-30}"
+          export MINUTOS="${M:-15}"
           node desierto/nube.mjs | tee tanda.txt
       - name: resumen en la pagina de la corrida
         run: |
