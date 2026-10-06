@@ -22,6 +22,8 @@ jobs:
       - name: bajar el simulador (el mismo archivo que usan el juego y el visor)
         run: |
           mkdir -p desierto/sim
+          # (si el experimento trae su propio simulador -desierto/sim-local, lo que todavia no esta publicado en el juego-, se usa ese)
+          if [ -d desierto/sim-local ]; then cp desierto/sim-local/* desierto/sim/; exit 0; fi
           for f in mundoVivo.js floraViva.js red2.js; do curl -fsSL "https://caminante-g1.vercel.app/sim/$f" -o "desierto/sim/$f"; done
           curl -fsSL "https://caminante-g1.vercel.app/cresta-salvaje.json" -o desierto/sim/cresta-salvaje.json
           curl -fsSL "https://caminante-g1.vercel.app/coyote-semilla.json" -o desierto/sim/coyote-semilla.json || rm -f desierto/sim/coyote-semilla.json

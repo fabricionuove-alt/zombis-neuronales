@@ -11,6 +11,7 @@
 // El simulador se baja del sitio del juego, como en nube.mjs.
 import fs from 'fs'; import path from 'path'; import {fileURLToPath} from 'url';
 import * as m from './sim/mundoVivo.js';
+import {maestro} from './maestro.mjs';   // (el cerebro escrito a mano: con "maestro": true en experimento.json, decide el en lugar de las redes -para medir el MUNDO sin depender de los cerebros-)
 const aqui = path.dirname(fileURLToPath(import.meta.url)), en = f => path.join(aqui, f);
 const X = JSON.parse(fs.readFileSync(en('experimento.json'), 'utf8')), HORAS = X.horas || 4, N = X.replicas || 10, CADA = 900, TOPE = (X.topeMinutos || 300) * 60000;
 const semillaRed = JSON.parse(fs.readFileSync(en('sim/cresta-salvaje.json'), 'utf8')).pesos, coyoteF = en('sim/coyote-semilla.json'), coyoteRed = fs.existsSync(coyoteF) && fs.statSync(coyoteF).size > 100 ? JSON.parse(fs.readFileSync(coyoteF, 'utf8')).pesos : semillaRed, semillas = {cerdo: semillaRed, coyote: coyoteRed}, d = (m.L / 1800) ** 2;
@@ -19,12 +20,13 @@ const series = ['receta,replica,semilla,minuto,especie,n,biomasa'], reps = ['rec
 const media = l => l.reduce((a, b) => a + b, 0) / (l.length || 1), desvio = l => { if (l.length < 2) return 0; const u = media(l); return Math.sqrt(l.reduce((a, b) => a + (b - u) ** 2, 0) / (l.length - 1)); };
 const mediana = l => { if (!l.length) return null; const s = [...l].sort((a, b) => a - b), k = s.length >> 1; return s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2; }, r2 = v => Math.round(v * 100) / 100;
 const biomasa = (M, k) => { let b = 0; if (M.pob[k]) { for (const a of M.pob[k]) if (a.vivo) b += a.cuerpo || 0; } else for (const K of m.grupos(M)) for (const a of K.miembros) if (a.vivo && a.esp === k) b += a.cuerpo || 0; return b; };
-const t0 = Date.now(), resumen = {hecho: new Date().toISOString(), lado: m.L, horas: HORAS, replicas: N, sinLlegadas: true, recetas: []}; let cortado = false;
+const t0 = Date.now(), resumen = {hecho: new Date().toISOString(), lado: m.L, horas: HORAS, replicas: N, sinLlegadas: true, maestro: !!X.maestro, recetas: []}; let cortado = false;
 for (const rc of X.recetas) {
   const porEsp = {}; for (const k of m.ESPECIES) porEsp[k] = {ext: [], nMedio: [], nFinal: [], vivas: 0}; let hechas = 0;
   for (let rep = 1; rep <= N; rep++) { if (Date.now() - t0 > TOPE) { cortado = true; break; }
     m.sembrar(rep);
     const M = m.crearMundo({receta: rc.receta, semillas, sinLlegadas: true, n: {cerdo: Math.round(90 * d), coyote: Math.round(15 * d)}, tribus: {steve: Math.round(18 * d), arana: Math.round(5 * d)}, nOasis: Math.round(12 * d)});
+    if (X.maestro) M.maestro = maestro;
     const ext = {}, suma = {}; let muestras = 0; for (const k of m.ESPECIES) suma[k] = 0;
     for (let t = 0; t < HORAS * 3600; t += CADA) { for (let k = 0; k < CADA * 2; k++) m.paso(M, 0.5); const c = m.censo(M), min = Math.round(M.t / 60); muestras++;
       for (const k of m.ESPECIES) { const n = c.esp[k].n; suma[k] += n; if (!n && ext[k] === undefined) ext[k] = min; series.push([rc.nombre, rep, rep, min, k, n, r2(biomasa(M, k))].join(',')); }
