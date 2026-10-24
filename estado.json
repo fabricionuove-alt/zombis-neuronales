@@ -1,0 +1,688 @@
+{
+ "actualizado": "2026-10-24T05:06:12.340Z",
+ "horasDeMundo": 11,
+ "horasEnEstaTanda": 0.1,
+ "minutosDeReloj": 15,
+ "lado": 2400,
+ "receta": {},
+ "matas": {
+  "matas": 10278,
+  "tamMedio": 0.75,
+  "tamMax": 7.87,
+  "generacion": 18,
+  "espina": 0.11,
+  "crece": 1.05,
+  "sequia": 0.16,
+  "reparto": {
+   "crecer": 0.34,
+   "hojas": 0.35,
+   "semillas": 0.21,
+   "reserva": 0.11
+  }
+ },
+ "especies": {
+  "cerdo": {
+   "n": 4382,
+   "tam": 0.84,
+   "gen": 17,
+   "genMedia": 9.83,
+   "hambre": 0.32,
+   "llegadas": 0
+  },
+  "coyote": {
+   "n": 4,
+   "tam": 0.54,
+   "gen": 5,
+   "genMedia": 4,
+   "hambre": 0.11,
+   "llegadas": 0
+  },
+  "steve": {
+   "n": 331,
+   "tam": 0.99,
+   "gen": 10,
+   "genMedia": 5.84,
+   "hambre": 0.15,
+   "imita": 0.49,
+   "celo": 0.52,
+   "vigor": 0.91,
+   "llegadas": 0
+  },
+  "arana": {
+   "n": 1,
+   "tam": 1,
+   "gen": 0,
+   "genMedia": 0,
+   "hambre": 0.31,
+   "imita": 0.45,
+   "celo": 0,
+   "vigor": 1,
+   "llegadas": 8
+  }
+ },
+ "tribus": [
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.95,
+   "gen": 3
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.85,
+   "gen": 5
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.59,
+   "gen": 3
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.97,
+   "gen": 1
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.79,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.82,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.6,
+   "gen": 3
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.88,
+   "gen": 4
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.96,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.35,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 5
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0.04,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.83,
+   "gen": 6
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.97,
+   "gen": 6
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.92,
+   "gen": 6
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 6
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.74,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.86,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.91,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.99,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.92,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.94,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0.06,
+   "agua": 0.93,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 3
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.89,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.89,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.98,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0.01,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.93,
+   "gen": 0
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 0.99,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.22,
+   "gen": 4
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 1,
+   "comida": 0,
+   "agua": 0.64,
+   "gen": 5
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.56,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.92,
+   "gen": 6
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.7,
+   "gen": 2
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.94,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.91,
+   "gen": 2
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.67,
+   "gen": 5
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 5
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.62,
+   "gen": 7
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 0.95,
+   "gen": 0
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 6
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 0.89,
+   "gen": 0
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 0.99,
+   "gen": 0
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.01,
+   "gen": 0
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 1,
+   "gen": 0
+  },
+  {
+   "esp": null,
+   "n": 0,
+   "comida": 0,
+   "agua": 0.6,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.89,
+   "gen": 0
+  },
+  {
+   "esp": "arana",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.67,
+   "gen": 0
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.97,
+   "gen": 3
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.87,
+   "gen": 2
+  },
+  {
+   "esp": "steve",
+   "n": 0,
+   "comida": 0,
+   "agua": 0.53,
+   "gen": 0
+  }
+ ],
+ "hizo": {
+  "steve: aviso: comida": 6513,
+  "steve: tomo de otro una costumbre: senal": 9489,
+  "steve: tomo de otro una costumbre: guardar": 4593,
+  "steve: tomo de otro una costumbre: reparto": 12583,
+  "arana: aviso: comida": 78,
+  "arana: tomo de otro una costumbre: guardar": 73,
+  "steve: tomo de otro una costumbre: muertos": 7331,
+  "steve: tomo de otro una costumbre: pareja": 15544,
+  "arana: tomo de otro una costumbre: extrano": 158,
+  "steve: tomo de otro una costumbre: mudarse": 5324,
+  "steve: tomo de otro una costumbre: extrano": 9763,
+  "steve: tomo de otro una costumbre: propio": 9062,
+  "arana: tomo de otro una costumbre: pareja": 172,
+  "steve: imito a otro": 33000,
+  "steve: tomo de otro una costumbre: adorno": 13052,
+  "arana: tomo de otro una costumbre: propio": 158,
+  "arana: tomo de otro una costumbre: adorno": 144,
+  "arana: tomo de otro una costumbre: senal": 62,
+  "arana: tomo de otro una costumbre: mudarse": 78,
+  "arana: tomo de otro una costumbre: reparto": 188,
+  "arana: tomo de otro una costumbre: muertos": 161,
+  "steve: tomo de otro una costumbre: tabu": 12077,
+  "arana: tomo de otro una costumbre: tabu": 192,
+  "arana: cambio una costumbre por su cuenta": 167,
+  "steve: cambio una costumbre por su cuenta": 4701,
+  "steve: levanto un refugio solo": 910,
+  "steve: invento: trampa": 19,
+  "arana: dio comida": 52,
+  "arana: tejio": 1391,
+  "steve: invento: conserva": 17,
+  "arana: ataco a un animal": 228,
+  "steve: arreglo un refugio": 85363,
+  "steve: agarro carne": 697,
+  "steve: ataco a uno de otra remera": 60,
+  "steve: agarro pasto": 41869,
+  "steve: dejo comida en un lugar con reparo": 1002,
+  "steve: comio de lo que habia dejado otro": 6441,
+  "steve: agarro de lo que habia dejado": 243518,
+  "steve: dio comida": 2911,
+  "arana: invento: agua": 3,
+  "steve: agarro de lo que habia dejado otro": 101247,
+  "arana: ataco a uno de otra especie": 76,
+  "arana: una tela atrapo algo": 261,
+  "arana: aviso: peligro": 70,
+  "arana: ataco a uno de su misma remera": 32,
+  "arana: comio de lo que habia dejado otro": 880,
+  "steve: aprendio de otro: conserva": 2852,
+  "steve: invento: agua": 16,
+  "steve: dejo comida al aire": 140945,
+  "steve: aviso: peligro": 9,
+  "steve: quiso aprender y no le salio: trampa": 4229,
+  "arana: aviso: reunión": 351,
+  "arana: ataco a uno de otra remera": 4,
+  "arana: tuvo cria con uno de genes parecidos": 45,
+  "arana: tuvo cria con uno de su misma remera": 75,
+  "arana: quiso aprender y no le salio: trampa": 108,
+  "arana: invento: conserva": 3,
+  "arana: aprendio de otro: conserva": 2,
+  "arana: aprendio de otro: trampa": 114,
+  "arana: enterro a uno de los suyos": 27,
+  "arana: tuvo cria con uno de genes distintos": 6,
+  "steve: aprendio de otro: trampa": 4436,
+  "steve: aprendio de otro: agua": 2586,
+  "arana: levanto un refugio junto a otro": 67,
+  "arana: levanto un refugio solo": 40,
+  "arana: arreglo un refugio": 85,
+  "steve: ataco a uno de otra especie": 146,
+  "steve: levanto un refugio junto a otro": 5705,
+  "arana: tuvo cria con uno de genes casi iguales": 24,
+  "arana: tomo del agua que llevaba": 44,
+  "steve: invento: punta": 17,
+  "steve: tomo del agua que llevaba": 3891,
+  "steve: ataco a uno de su misma remera": 15,
+  "steve: enterro a uno de los suyos": 17,
+  "steve: quiso aprender y no le salio: conserva": 607,
+  "steve: aprendio de otro: punta": 3055,
+  "steve: quiso aprender y no le salio: punta": 649,
+  "steve: aviso: reunión": 7231,
+  "steve: tuvo cria con uno de genes distintos": 175,
+  "steve: tuvo cria con uno de su misma remera": 837,
+  "steve: tuvo cria con uno de genes casi iguales": 235,
+  "steve: tuvo cria con uno de genes parecidos": 428,
+  "steve: mejoro por su cuenta: trampa": 95,
+  "arana: aprendio de otro: agua": 121,
+  "steve: quiso aprender y no le salio: agua": 518,
+  "steve: mejoro por su cuenta: agua": 79,
+  "steve: mejoro por su cuenta: conserva": 79,
+  "steve: mejoro por su cuenta: punta": 93,
+  "steve: amamanto a su cria": 512,
+  "cerdo: amamanto a su cria": 1209,
+  "arana: invento: punta": 2,
+  "coyote: amamanto a su cria": 16,
+  "steve: tuvo cria con uno de otra remera": 1,
+  "steve: invento: fuego": 20,
+  "steve: aprendio de otro: fuego": 3809,
+  "steve: quiso aprender y no le salio: fuego": 3729,
+  "steve: ataco a un animal": 4,
+  "arana: amamanto a su cria": 54,
+  "arana: mejoro por su cuenta: trampa": 2,
+  "steve: mejoro por su cuenta: fuego": 47,
+  "arana: quiso aprender y no le salio: agua": 17,
+  "arana: aprendio de otro: punta": 79,
+  "arana: quiso aprender y no le salio: punta": 15,
+  "arana: mejoro por su cuenta: agua": 2
+ },
+ "muertes": {
+  "coyote: lo mato un cerdo que se defendia": 32,
+  "cerdo: lo mato un arana": 31,
+  "cerdo: sed": 2965,
+  "arana: lo mato un cerdo que se defendia": 72,
+  "coyote: hambre": 24,
+  "arana: hambre": 70,
+  "arana: lo mato un steve": 28,
+  "cerdo: lo mato un coyote": 50,
+  "steve: lo mato un steve": 3,
+  "steve: hambre": 421,
+  "steve: sed": 147,
+  "arana: lo mato un steve que se defendia": 32,
+  "arana: sed": 22,
+  "cerdo: hambre": 12025,
+  "arana: lo mato un arana": 3,
+  "coyote: sed": 19,
+  "cerdo: heridas": 7,
+  "cerdo: vejez": 213,
+  "coyote: vejez": 13,
+  "steve: vejez": 117,
+  "steve: lo mato un arana": 10,
+  "steve: heridas": 1
+ },
+ "llegadas": {
+  "arana": 8
+ }
+}
